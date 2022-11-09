@@ -23,9 +23,9 @@ echo "Total of $SLURM_NTASKS cores"
 
 module purge
 module load CUDA/11.4.1
-pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
-pip install -r requirements.txt --user
-pip install -U openmim
+pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
+pip3 install -r requirements.txt --user
+pip3 install -U openmim
 mim install mmcv-full
-python ./tools/train.py /cluster/home/jorgro/road_detector/configs/omnimod/road_detector.py --work-dir ./runs
+python3 ./tools/train.py /cluster/home/jorgro/road_detector/configs/omnimod/road_detector.py --work-dir ./runs
 uname -a
