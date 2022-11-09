@@ -24,6 +24,6 @@ echo "Total of $SLURM_NTASKS cores"
 module purge
 module load PyTorch/1.7.1-fosscuda-2020b-v100
 pip install -r requirements.txt --user
-python run_experiments.py --config /cluster/home/jorgro/road_detector/configs/omnimod/road_detector.py
+python /cluster/home/jorgro/road_detector/run_experiments.py --config /cluster/home/jorgro/road_detector/configs/omnimod/road_detector.py
 
 uname -a
