@@ -6,7 +6,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=12000
 #SBATCH --job-name="road_detector"
-#SBATCH --output=test-srun.out
+#SBATCH --output=srun.out
 #SBATCH --mail-user=joergen.rosager@gmail.com
 #SBATCH --mail-type=ALL
 
@@ -22,10 +22,10 @@ echo "We are using $SLURM_CPUS_ON_NODE cores per node"
 echo "Total of $SLURM_NTASKS cores"
 
 module purge
-module load PyTorch/1.8.1-fosscuda-2020b
+module load CUDA/11.4.1
+pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
 pip install -r requirements.txt --user
 pip install -U openmim
-pip install -U torchvision
 mim install mmcv-full
 python ./tools/train.py /cluster/home/jorgro/road_detector/configs/omnimod/road_detector.py --work-dir ./runs
 uname -a
