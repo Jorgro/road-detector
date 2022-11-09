@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --partition=GPUQ
+#SBATCH --partition=CPUQ
 #SBATCH --account=jorgro
 #SBATCH --time=00:00:00
 #SBATCH --nodes=1
