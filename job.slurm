@@ -25,6 +25,7 @@ module purge
 module load PyTorch/1.7.1-fosscuda-2020b-v100
 pip install -r requirements.txt --user
 pip install -U openmim
+pip install -U torchvision
 mim install mmcv-full
 python ./tools/train.py /cluster/home/jorgro/road_detector/configs/omnimod/road_detector.py --work-dir ./runs
 uname -a
