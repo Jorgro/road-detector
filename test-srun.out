@@ -1,0 +1,169 @@
+we are running from this directory: /cluster/home/jorgro/road-detector
+ the name of the job is: road_detector
+Th job ID is 13197822
+The job was run on these nodes: idun-04-09
+Number of nodes: 1
+We are using 1 cores
+We are using 1 cores per node
+Total of 1 cores
+Requirement already satisfied: cython in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from -r requirements/build.txt (line 2)) (0.29.21)
+Requirement already satisfied: numpy in /cluster/apps/eb/software/SciPy-bundle/2020.11-fosscuda-2020b/lib/python3.8/site-packages (from -r requirements/build.txt (line 3)) (1.19.4)
+Collecting cityscapesscripts
+  Downloading cityscapesScripts-2.2.1-py3-none-any.whl (473 kB)
+Collecting imagecorruptions
+  Downloading imagecorruptions-1.1.2-py3-none-any.whl (2.1 MB)
+Requirement already satisfied: scipy in /cluster/apps/eb/software/SciPy-bundle/2020.11-fosscuda-2020b/lib/python3.8/site-packages (from -r requirements/optional.txt (line 3)) (1.5.4)
+Collecting sklearn
+  Downloading sklearn-0.0.post1.tar.gz (3.6 kB)
+Collecting matplotlib
+  Downloading matplotlib-3.6.2-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (9.4 MB)
+Collecting pycocotools
+  Downloading pycocotools-2.0.6.tar.gz (24 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+    Preparing wheel metadata: started
+    Preparing wheel metadata: finished with status 'done'
+Requirement already satisfied: six in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from -r requirements/runtime.txt (line 4)) (1.15.0)
+Collecting terminaltables
+  Downloading terminaltables-3.1.10-py2.py3-none-any.whl (15 kB)
+Collecting asynctest
+  Downloading asynctest-0.13.0-py3-none-any.whl (26 kB)
+Collecting codecov
+  Downloading codecov-2.1.12-py2.py3-none-any.whl (16 kB)
+Collecting flake8
+  Downloading flake8-5.0.4-py2.py3-none-any.whl (61 kB)
+Collecting interrogate
+  Downloading interrogate-1.5.0-py3-none-any.whl (45 kB)
+Collecting isort==4.3.21
+  Downloading isort-4.3.21-py2.py3-none-any.whl (42 kB)
+Collecting kwarray
+  Downloading kwarray-0.6.5-py3-none-any.whl (100 kB)
+Obtaining mmtrack from git+https://github.com/open-mmlab/mmtracking#egg=mmtrack (from -r requirements/tests.txt (line 8))
+  Cloning https://github.com/open-mmlab/mmtracking to ./src/mmtrack
+Collecting onnx==1.7.0
+  Downloading onnx-1.7.0-cp38-cp38-manylinux1_x86_64.whl (7.4 MB)
+Collecting onnxruntime>=1.8.0
+  Downloading onnxruntime-1.13.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.2 MB)
+Requirement already satisfied: protobuf<=3.20.1 in /cluster/apps/eb/software/protobuf-python/3.14.0-GCCcore-10.2.0/lib/python3.8/site-packages (from -r requirements/tests.txt (line 11)) (3.14.0)
+Requirement already satisfied: pytest in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from -r requirements/tests.txt (line 12)) (6.1.1)
+Collecting ubelt
+  Downloading ubelt-1.2.2-py3-none-any.whl (198 kB)
+Collecting xdoctest>=0.10.0
+  Downloading xdoctest-1.1.0-py3-none-any.whl (135 kB)
+Collecting yapf
+  Downloading yapf-0.32.0-py2.py3-none-any.whl (190 kB)
+Requirement already satisfied: pillow in /cluster/apps/eb/software/Pillow/8.0.1-GCCcore-10.2.0/lib/python3.8/site-packages (from cityscapesscripts->-r requirements/optional.txt (line 1)) (8.0.1)
+Collecting coloredlogs
+  Downloading coloredlogs-15.0.1-py2.py3-none-any.whl (46 kB)
+Requirement already satisfied: appdirs in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from cityscapesscripts->-r requirements/optional.txt (line 1)) (1.4.4)
+Collecting typing
+  Downloading typing-3.7.4.3.tar.gz (78 kB)
+Collecting pyquaternion
+  Downloading pyquaternion-0.9.9-py3-none-any.whl (14 kB)
+Collecting tqdm
+  Downloading tqdm-4.64.1-py2.py3-none-any.whl (78 kB)
+Collecting scikit-image>=0.15
+  Downloading scikit_image-0.19.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (14.0 MB)
+Collecting opencv-python>=3.4.5
+  Downloading opencv_python-4.6.0.66-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (60.9 MB)
+Collecting cycler>=0.10
+  Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
+Requirement already satisfied: python-dateutil>=2.7 in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from matplotlib->-r requirements/runtime.txt (line 1)) (2.8.1)
+Collecting kiwisolver>=1.0.1
+  Downloading kiwisolver-1.4.4-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.2 MB)
+Collecting fonttools>=4.22.0
+  Downloading fonttools-4.38.0-py3-none-any.whl (965 kB)
+Requirement already satisfied: packaging>=20.0 in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from matplotlib->-r requirements/runtime.txt (line 1)) (20.4)
+Requirement already satisfied: pyparsing>=2.2.1 in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from matplotlib->-r requirements/runtime.txt (line 1)) (2.4.7)
+Collecting contourpy>=1.0.1
+  Downloading contourpy-1.0.6-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (295 kB)
+Collecting coverage
+  Downloading coverage-6.5.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (214 kB)
+Requirement already satisfied: requests>=2.7.9 in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from codecov->-r requirements/tests.txt (line 2)) (2.24.0)
+Collecting pycodestyle<2.10.0,>=2.9.0
+  Downloading pycodestyle-2.9.1-py2.py3-none-any.whl (41 kB)
+Collecting mccabe<0.8.0,>=0.7.0
+  Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Collecting pyflakes<2.6.0,>=2.5.0
+  Downloading pyflakes-2.5.0-py2.py3-none-any.whl (66 kB)
+Requirement already satisfied: attrs in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from interrogate->-r requirements/tests.txt (line 4)) (20.2.0)
+Requirement already satisfied: toml in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from interrogate->-r requirements/tests.txt (line 4)) (0.10.1)
+Requirement already satisfied: py in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from interrogate->-r requirements/tests.txt (line 4)) (1.9.0)
+Requirement already satisfied: colorama in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from interrogate->-r requirements/tests.txt (line 4)) (0.4.3)
+Requirement already satisfied: click>=7.1 in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from interrogate->-r requirements/tests.txt (line 4)) (7.1.2)
+Requirement already satisfied: tabulate in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from interrogate->-r requirements/tests.txt (line 4)) (0.8.7)
+Collecting attributee
+  Downloading attributee-0.1.7.tar.gz (11 kB)
+Collecting dotty_dict
+  Downloading dotty_dict-1.3.1-py3-none-any.whl (7.0 kB)
+Collecting einops
+  Downloading einops-0.5.0-py3-none-any.whl (36 kB)
+Collecting lap
+  Downloading lap-0.4.0.tar.gz (1.5 MB)
+Collecting mmcls<1.0.0,>=0.16.0
+  Downloading mmcls-0.24.1-py2.py3-none-any.whl (647 kB)
+Collecting motmetrics
+  Downloading motmetrics-1.2.5-py3-none-any.whl (161 kB)
+Requirement already satisfied: pandas<=1.3.5 in /cluster/apps/eb/software/SciPy-bundle/2020.11-fosscuda-2020b/lib/python3.8/site-packages (from mmtrack->-r requirements/tests.txt (line 8)) (1.1.4)
+Collecting seaborn
+  Downloading seaborn-0.12.1-py3-none-any.whl (288 kB)
+Requirement already satisfied: typing-extensions>=3.6.2.1 in /cluster/apps/eb/software/typing-extensions/3.7.4.3-GCCcore-10.2.0/lib/python3.8/site-packages (from onnx==1.7.0->-r requirements/tests.txt (line 9)) (3.7.4.3)
+Collecting flatbuffers
+  Downloading flatbuffers-22.10.26-py2.py3-none-any.whl (26 kB)
+Collecting sympy
+  Downloading sympy-1.11.1-py3-none-any.whl (6.5 MB)
+Requirement already satisfied: pluggy<1.0,>=0.12 in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from pytest->-r requirements/tests.txt (line 12)) (0.13.1)
+Requirement already satisfied: iniconfig in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from pytest->-r requirements/tests.txt (line 12)) (1.0.1)
+Collecting humanfriendly>=9.1
+  Downloading humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
+Collecting imageio>=2.4.1
+  Downloading imageio-2.22.4-py3-none-any.whl (3.4 MB)
+Collecting PyWavelets>=1.1.1
+  Downloading PyWavelets-1.4.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.9 MB)
+Collecting tifffile>=2019.7.26
+  Downloading tifffile-2022.10.10-py3-none-any.whl (210 kB)
+Collecting networkx>=2.2
+  Downloading networkx-2.8.8-py3-none-any.whl (2.0 MB)
+Requirement already satisfied: chardet<4,>=3.0.2 in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from requests>=2.7.9->codecov->-r requirements/tests.txt (line 2)) (3.0.4)
+Requirement already satisfied: idna<3,>=2.5 in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from requests>=2.7.9->codecov->-r requirements/tests.txt (line 2)) (2.10)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from requests>=2.7.9->codecov->-r requirements/tests.txt (line 2)) (1.25.10)
+Requirement already satisfied: certifi>=2017.4.17 in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from requests>=2.7.9->codecov->-r requirements/tests.txt (line 2)) (2020.6.20)
+Collecting xmltodict>=0.12.0
+  Downloading xmltodict-0.13.0-py2.py3-none-any.whl (10.0 kB)
+Requirement already satisfied: pytz>=2017.2 in /cluster/apps/eb/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages (from pandas<=1.3.5->mmtrack->-r requirements/tests.txt (line 8)) (2020.1)
+Requirement already satisfied: mpmath>=0.19 in /cluster/apps/eb/software/SciPy-bundle/2020.11-fosscuda-2020b/lib/python3.8/site-packages (from sympy->onnxruntime>=1.8.0->-r requirements/tests.txt (line 10)) (1.1.0)
+Building wheels for collected packages: sklearn, pycocotools, typing, attributee, lap
+  Building wheel for sklearn (setup.py): started
+  Building wheel for sklearn (setup.py): finished with status 'done'
+  Created wheel for sklearn: filename=sklearn-0.0.post1-py3-none-any.whl size=2342 sha256=3da928063d9914dbceb03915557c782e3d51915973968ae867943c9f4d290b24
+  Stored in directory: /cluster/home/jorgro/.cache/pip/wheels/14/25/f7/1cc0956978ae479e75140219088deb7a36f60459df242b1a72
+  Building wheel for pycocotools (PEP 517): started
+  Building wheel for pycocotools (PEP 517): finished with status 'done'
+  Created wheel for pycocotools: filename=pycocotools-2.0.6-cp38-cp38-linux_x86_64.whl size=374524 sha256=7f83a3e8d4893d6d2db523c134dd56624e0d25160c9f94defa65f4fd3b898509
+  Stored in directory: /cluster/home/jorgro/.cache/pip/wheels/3e/08/ac/58126fe59992032701437336493f6132e1b72381a62d00b595
+  Building wheel for typing (setup.py): started
+  Building wheel for typing (setup.py): finished with status 'done'
+  Created wheel for typing: filename=typing-3.7.4.3-py3-none-any.whl size=26308 sha256=23c5d49ea30f41cd0b71126b1c26bb89f7118e70073c46ec255aeb24214651d6
+  Stored in directory: /cluster/home/jorgro/.cache/pip/wheels/5e/5d/01/3083e091b57809dad979ea543def62d9d878950e3e74f0c930
+  Building wheel for attributee (setup.py): started
+  Building wheel for attributee (setup.py): finished with status 'done'
+  Created wheel for attributee: filename=attributee-0.1.7-py3-none-any.whl size=12687 sha256=700452412e441d94ea9ffefdd291bc1a4da71d05e65cbbffed91b6754e58a20e
+  Stored in directory: /cluster/home/jorgro/.cache/pip/wheels/b9/31/b3/a309fe496ee512c60c8c2636cc68ef42c4e93c01be76fa3c38
+  Building wheel for lap (setup.py): started
+  Building wheel for lap (setup.py): finished with status 'done'
+  Created wheel for lap: filename=lap-0.4.0-cp38-cp38-linux_x86_64.whl size=1646430 sha256=8b47fc5b318bbd32dcbb8cb79a64e186a9d4d878ba24926bc683cd3fbbbef74a
+  Stored in directory: /cluster/home/jorgro/.cache/pip/wheels/86/ec/8a/2baa6fb3ea3a3bdc40a9c2c4b8957b5b544f207531f7a78a89
+Successfully built sklearn pycocotools typing attributee lap
+Installing collected packages: cycler, kiwisolver, fonttools, contourpy, matplotlib, humanfriendly, coloredlogs, typing, pyquaternion, tqdm, cityscapesscripts, imageio, PyWavelets, tifffile, networkx, scikit-image, opencv-python, imagecorruptions, sklearn, pycocotools, terminaltables, asynctest, coverage, codecov, pycodestyle, mccabe, pyflakes, flake8, interrogate, isort, ubelt, kwarray, attributee, dotty-dict, einops, lap, mmcls, xmltodict, motmetrics, seaborn, mmtrack, onnx, flatbuffers, sympy, onnxruntime, xdoctest, yapf
+  Running setup.py develop for mmtrack
+ERROR: After October 2020 you may experience errors when installing or updating packages. This is because pip will change the way that it resolves dependency conflicts.
+
+We recommend you use --use-feature=2020-resolver to test your packages with the new resolver before it becomes the default.
+
+imageio 2.22.4 requires pillow>=8.3.2, but you'll have pillow 8.0.1 which is incompatible.
+onnxruntime 1.13.1 requires numpy>=1.21.6, but you'll have numpy 1.19.4 which is incompatible.
+Successfully installed PyWavelets-1.4.1 asynctest-0.13.0 attributee-0.1.7 cityscapesscripts-2.2.1 codecov-2.1.12 coloredlogs-15.0.1 contourpy-1.0.6 coverage-6.5.0 cycler-0.11.0 dotty-dict-1.3.1 einops-0.5.0 flake8-5.0.4 flatbuffers-22.10.26 fonttools-4.38.0 humanfriendly-10.0 imagecorruptions-1.1.2 imageio-2.22.4 interrogate-1.5.0 isort-4.3.21 kiwisolver-1.4.4 kwarray-0.6.5 lap-0.4.0 matplotlib-3.6.2 mccabe-0.7.0 mmcls-0.24.1 mmtrack motmetrics-1.2.5 networkx-2.8.8 onnx-1.7.0 onnxruntime-1.13.1 opencv-python-4.6.0.66 pycocotools-2.0.6 pycodestyle-2.9.1 pyflakes-2.5.0 pyquaternion-0.9.9 scikit-image-0.19.3 seaborn-0.12.1 sklearn-0.0.post1 sympy-1.11.1 terminaltables-3.1.10 tifffile-2022.10.10 tqdm-4.64.1 typing-3.7.4.3 ubelt-1.2.2 xdoctest-1.1.0 xmltodict-0.13.0 yapf-0.32.0
+python: can't open file 'run_experiments.py': [Errno 2] No such file or directory
+Linux idun-04-09 4.18.0-348.el8.0.2.x86_64 #1 SMP Sun Nov 14 00:51:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
