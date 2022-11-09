@@ -23,5 +23,5 @@ echo "Total of $SLURM_NTASKS cores"
 
 module purge
 module load PyTorch/1.8.1-fosscuda-2020b
-python3 ./tools/train.py /cluster/home/jorgro/road_detector/configs/omnimod/road_detector.py --work-dir ./runs
+python ./tools/train.py /cluster/home/jorgro/road_detector/configs/omnimod/road_detector.py --work-dir ./runs
 uname -a
