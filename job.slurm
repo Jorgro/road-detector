@@ -22,11 +22,6 @@ echo "We are using $SLURM_CPUS_ON_NODE cores per node"
 echo "Total of $SLURM_NTASKS cores"
 
 module purge
-module load cuDNN/8.2.1.32-CUDA-11.3.1
-which python3
-pip3 install --user torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
-pip3 install -r requirements.txt --user
-pip3 install -U openmim
-mim install -U mmcv-full
+module load PyTorch/1.8.1-fosscuda-2020b
 python3 ./tools/train.py /cluster/home/jorgro/road_detector/configs/omnimod/road_detector.py --work-dir ./runs
 uname -a
