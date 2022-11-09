@@ -22,7 +22,8 @@ echo "We are using $SLURM_CPUS_ON_NODE cores per node"
 echo "Total of $SLURM_NTASKS cores"
 
 module purge
-module load CUDA/11.4.1
+# module load CUDA/11.4.1
+module load PyTorch/1.8.1-fosscuda-2020b
 pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
 pip3 install -r requirements.txt --user
 pip3 install -U openmim
