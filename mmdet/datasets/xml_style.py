@@ -24,8 +24,8 @@ class XMLDataset(CustomDataset):
 
     def __init__(self,
                  min_size=None,
-                 img_subdir='JPEGImages',
-                 ann_subdir='Annotations',
+                 img_subdir='images',
+                 ann_subdir='annotations/xmls',
                  **kwargs):
         assert self.CLASSES or kwargs.get(
             'classes', None), 'CLASSES in `XMLDataset` can not be None.'
