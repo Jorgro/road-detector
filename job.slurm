@@ -25,9 +25,9 @@ module purge
 module load CUDA/11.4.1
 # module load PyTorch/1.8.1-fosscuda-2020b
 which python3
-pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
-pip3 install -r requirements.txt --user
-pip3 install -U openmim
+sudo pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
+sudo pip3 install -r requirements.txt --user
+sudo pip3 install -U openmim
 mim install mmcv-full
 python3 ./tools/train.py /cluster/home/jorgro/road_detector/configs/omnimod/road_detector.py --work-dir ./runs
 uname -a
