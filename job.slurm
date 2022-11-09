@@ -22,7 +22,7 @@ echo "We are using $SLURM_CPUS_ON_NODE cores per node"
 echo "Total of $SLURM_NTASKS cores"
 
 module purge
-module load CUDA/11.1.1-GCC-10.2.0
+module load cuDNN/8.2.1.32-CUDA-11.3.1
 which python3
 pip3 install --user torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
 pip3 install -r requirements.txt --user
