@@ -1,7 +1,7 @@
 _base_ = [
-    '../_base_/models/faster_rcnn_r50_caffe_c4.py',
-    '../_base_/datasets/rdd2022.py',
-    '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
+    './_base_/models/faster_rcnn_r50_caffe_c4.py',
+    './_base_/datasets/rdd2022.py',
+    './_base_/schedules/schedule_1x.py', './_base_/default_runtime.py'
 ]
 
 model = dict(
