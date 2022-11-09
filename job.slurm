@@ -22,7 +22,7 @@ echo "We are using $SLURM_CPUS_ON_NODE cores per node"
 echo "Total of $SLURM_NTASKS cores"
 
 module purge
-module load PyTorch/1.7.1-fosscuda-2020b-v100
+module load PyTorch/1.8.1-fosscuda-2020b
 pip install -r requirements.txt --user
 pip install -U openmim
 pip install -U torchvision
