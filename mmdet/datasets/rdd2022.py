@@ -15,7 +15,7 @@ class RDD2022Dataset(XMLDataset):
     Conversion scripts can be found in
     https://github.com/sovrasov/wider-face-pascal-voc-annotations
     """
-    CLASSES = ('Longitudinal', 'Lateral', 'Alligator', 'Pothole')
+    CLASSES = ('D00', 'D10', 'D20', 'D40')
 
     PALETTE = [(106, 0, 228), (119, 11, 32), (165, 42, 42), (0, 0, 192)]
 
