@@ -24,6 +24,5 @@ echo "Total of $SLURM_NTASKS cores"
 module purge
 module load Anaconda3/2020.07
 module load intel/2020b
-export PYTHONPATH=/cluster/home/jorgro/road-detector/mmdet
-python ./tools/train.py ./configs/road_detector.py --work-dir ./runs
+PYTHONPATH=/cluster/home/jorgro/road-detector/mmdet python ./tools/train.py ./configs/road_detector.py --work-dir ./runs
 uname -a
