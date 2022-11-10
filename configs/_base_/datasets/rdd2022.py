@@ -50,4 +50,4 @@ data = dict(
         ann_file="/cluster/home/jorgro/train.txt",
         img_prefix=data_root + 'train/',
         pipeline=test_pipeline))
-evaluation = dict(interval=1, metric='bbox')
+evaluation = dict(interval=1, metric='mAP')
