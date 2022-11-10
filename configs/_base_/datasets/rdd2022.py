@@ -1,6 +1,6 @@
 # dataset settings
 dataset_type = 'RDD2022Dataset'
-data_root = '/cluster/projects/vc/courses/TDT17/2022/open/RDD2022/Norway'
+data_root = '/cluster/projects/vc/courses/TDT17/2022/open/RDD2022/Norway/'
 #img_norm_cfg = dict(
 #    mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 
