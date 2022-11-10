@@ -2,7 +2,6 @@
 #SBATCH --partition=GPUQ
 #SBATCH --account=ie-idi
 #SBATCH --time=00:05:00
-#SBATCH --gpus=1
 #SBATCH --gpus-per-node=1
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
