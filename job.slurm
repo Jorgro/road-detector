@@ -1,6 +1,7 @@
 #!/bin/sh
 #SBATCH --partition=GPUQ
 #SBATCH --account=ie-idi
+#SBATCH --gpus=1
 #SBATCH --time=00:15:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
@@ -24,5 +25,6 @@ echo "Total of $SLURM_NTASKS cores"
 module purge
 module load Anaconda3/2020.07
 module load intel/2020b
+nvidia-smi
 PYTHONPATH=/cluster/home/jorgro/road-detector python ./tools/train.py ./configs/road_detector.py --work-dir ./runs
 uname -a
