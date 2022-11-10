@@ -13,7 +13,8 @@ model = dict(
         test_branch_idx=1,
         # init_cfg=dict(
         #     type='Pretrained',
-        #     checkpoint='open-mmlab://detectron2/resnet50_caffe')),
+        #     checkpoint='open-mmlab://detectron2/resnet50_caffe')
+            ),
     roi_head=dict(type='TridentRoIHead', num_branch=3, test_branch_idx=1),
     train_cfg=dict(
         rpn_proposal=dict(max_per_img=500),
