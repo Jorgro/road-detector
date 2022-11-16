@@ -169,13 +169,14 @@ custom_hooks = [
 ]
 checkpoint_config = dict(interval=interval)
 evaluation = dict(
-    save_best='auto',
+    save_best='mAP',
     # The evaluation interval is 'interval' when running epoch is
     # less than ‘max_epochs - num_last_epochs’.
     # The evaluation interval is 1 when running epoch is greater than
     # or equal to ‘max_epochs - num_last_epochs’.
-    interval=interval,
-    dynamic_intervals=[(max_epochs - num_last_epochs, 1)],
+    interval=1,
+    #interval=interval,
+    #dynamic_intervals=[(max_epochs - num_last_epochs, 1)],
     metric='mAP')
 log_config = dict(interval=50)
 
