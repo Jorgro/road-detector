@@ -72,7 +72,7 @@ train_pipeline = [
         type='MinIoURandomCrop',
         min_ious=(0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
         min_crop_size=0.3),
-    dict(type='Resize', img_scale=(608, 608), keep_ratio=True),
+    dict(type='Resize', img_scale=(640, 640), keep_ratio=True),
     dict(type='RandomFlip', flip_ratio=0.5),
     dict(type='PhotoMetricDistortion'),
     dict(type='Normalize', **img_norm_cfg),
@@ -84,7 +84,7 @@ test_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(
         type='MultiScaleFlipAug',
-        img_scale=(608, 608),
+        img_scale=(640, 640),
         flip=False,
         transforms=[
             dict(type='Resize', keep_ratio=True),
@@ -102,7 +102,7 @@ data = dict(
         type=dataset_type,
         ann_file="/cluster/home/jorgro/train.txt",
         img_prefix=data_root + 'train/',
-        pipeline=test_pipeline),
+        pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         ann_file="/cluster/home/jorgro/train.txt",
