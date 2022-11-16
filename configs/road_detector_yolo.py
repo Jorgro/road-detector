@@ -4,9 +4,10 @@ model = dict(
     type='YOLOV3',
     backbone=dict(
         type='Darknet',
-        depth=53,
+        depth=25,
         out_indices=(3, 4, 5),
-        init_cfg=dict(type='Pretrained', checkpoint='open-mmlab://darknet53')),
+        #init_cfg=dict(type='Pretrained', checkpoint='open-mmlab://darknet53')
+        ),
     neck=dict(
         type='YOLOV3Neck',
         num_scales=3,
