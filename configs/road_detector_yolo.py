@@ -4,7 +4,7 @@ model = dict(
     type='YOLOV3',
     backbone=dict(
         type='Darknet',
-        depth=25,
+        depth=53,
         out_indices=(3, 4, 5),
         #init_cfg=dict(type='Pretrained', checkpoint='open-mmlab://darknet53')
         ),
@@ -59,6 +59,7 @@ model = dict(
 # dataset settings
 dataset_type = 'RDD2022Dataset'
 data_root = '/cluster/projects/vc/courses/TDT17/2022/open/RDD2022/Norway/'
+img_scale = (2048, 1024)
 
 img_norm_cfg = dict(mean=[0, 0, 0], std=[255., 255., 255.], to_rgb=True)
 train_pipeline = [
@@ -73,7 +74,7 @@ train_pipeline = [
         type='MinIoURandomCrop',
         min_ious=(0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
         min_crop_size=0.3),
-    #dict(type='Resize', img_scale=(640, 640), keep_ratio=True),
+    dict(type='Resize', img_scale=img_scale, keep_ratio=True),
     dict(type='RandomFlip', flip_ratio=0.5),
     dict(type='PhotoMetricDistortion'),
     dict(type='Normalize', **img_norm_cfg),
@@ -85,7 +86,7 @@ test_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(
         type='MultiScaleFlipAug',
-        img_scale=(640, 640),
+        img_scale=img_scale,
         flip=False,
         transforms=[
             #dict(type='Resize', keep_ratio=True),
