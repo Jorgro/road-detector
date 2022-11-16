@@ -128,7 +128,7 @@ lr_config = dict(
     step=[218, 246])
 # runtime settings
 runner = dict(type='EpochBasedRunner', max_epochs=273)
-evaluation = dict(interval=1, metric=['mAP'])
+evaluation = dict(interval=5, metric=['mAP'])
 
 # NOTE: `auto_scale_lr` is for automatically scaling LR,
 # USER SHOULD NOT CHANGE ITS VALUES.
