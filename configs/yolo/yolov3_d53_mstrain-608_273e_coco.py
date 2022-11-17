@@ -54,7 +54,7 @@ model = dict(
         score_thr=0.05,
         conf_thr=0.005,
         nms=dict(type='nms', iou_threshold=0.45),
-        max_per_img=100))
+        max_per_img=2))
 # dataset settings
 dataset_type = 'CocoDataset'
 data_root = 'data/coco/'
