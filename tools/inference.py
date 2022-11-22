@@ -17,7 +17,7 @@ save_file = "/cluster/home/jorgro/submission.txt"
 with open(save_file, 'w') as f:
     for img in test_dataset:
         result = inference_detector(model, img)
-        string = f"{img[49:49+13]}"
+        string = f"{img[49:]}"
         for i, obj in enumerate(result):
             if obj.shape[0]:
                 string += f" {i} {int(obj[0][0])} {int(obj[0][1])} {int(obj[0][2])} {int(obj[0][3])}"
