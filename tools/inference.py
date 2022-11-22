@@ -14,12 +14,13 @@ test_dataset = glob.glob("/cluster/home/jorgro/datasets/Norway/test/images/*.jpg
 save_file = "/cluster/home/jorgro/submission.txt"
 
 
-#with open(save_file, 'w') as f:
-for img in test_dataset:
-    result = inference_detector(model, img)
-    string = f"{img[:13]}"
-    for i, obj in enumerate(result):
-        if obj.shape[0]:
-            string += f" {i} {obj[0][0]} {obj[0][1]} {obj[0][2]} {obj[0][3]}"
-    print(string)
+with open(save_file, 'w') as f:
+    for img in test_dataset:
+        result = inference_detector(model, img)
+        string = f"{img[49:49+13]}"
+        for i, obj in enumerate(result):
+            if obj.shape[0]:
+                string += f" {i} {int(obj[0][0])} {int(obj[0][1])} {int(obj[0][2])} {int(obj[0][3])}"
+        f.write(string)
+        print(string)
        # f.write(f"{}")
