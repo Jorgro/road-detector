@@ -11,7 +11,15 @@ model = init_detector(config_file, checkpoint_file, device='cuda:0')
 
 # test a single image and show the results
 test_dataset = glob.glob("/cluster/home/jorgro/datasets/Norway/test/images/*.jpg")
+save_file = "/cluster/home/jorgro/submission.txt"
 
+
+#with open(save_file, 'w') as f:
 for img in test_dataset:
     result = inference_detector(model, img)
-    print(result)
+    string = f"{img}"
+    for i, obj in enumerate(result):
+        if obj.shape[0]:
+            string += f" {i} {obj[0]} {obj[1]} {obj[2]} {obj[3]}"
+    print(string)
+       # f.write(f"{}")
