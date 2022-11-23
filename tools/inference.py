@@ -16,6 +16,7 @@ save_file = "/cluster/home/jorgro/submission.txt"
 with open(save_file, 'w') as f:
     for j in range(len(test_dataset), 8):
         results = inference_detector(model, test_dataset[j:j+8])
+        print(results)
         for ind, result in enumerate(results):
             string = f"{test_dataset[j+ind][49:]}"
             for i, obj in enumerate(result):
