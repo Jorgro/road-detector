@@ -21,6 +21,7 @@ with open(save_file, 'w') as f:
         for i, obj in enumerate(result):
             if obj.shape[0]:
                 string += f" {i} {int(obj[0][0])} {int(obj[0][1])} {int(obj[0][2])} {int(obj[0][3])}"
+        string += "\n"
         f.write(string)
         print(string)
        # f.write(f"{}")
