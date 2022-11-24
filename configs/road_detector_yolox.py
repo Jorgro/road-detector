@@ -38,7 +38,7 @@ train_pipeline = [
         ratio_range=(0.8, 1.6),
         pad_val=114.0),
     dict(type='YOLOXHSVRandomAug'),
-    #dict(type='RandomFlip', flip_ratio=0.5),
+    dict(type='RandomFlip', flip_ratio=0.0),
     # According to the official implementation, multi-scale
     # training is not considered here but in the
     # 'mmdet/models/detectors/yolox.py'.
@@ -77,7 +77,7 @@ test_pipeline = [
         flip=False,
         transforms=[
             dict(type='Resize', keep_ratio=True),
-            #dict(type='RandomFlip'),
+            dict(type='RandomFlip'),
             dict(
                 type='Pad',
                 pad_to_square=True,
