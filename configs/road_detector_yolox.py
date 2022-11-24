@@ -55,8 +55,8 @@ train_pipeline = [
 ]
 
 train_dataset = dict(
-    type='ClassBalancedDataset',
-    oversample_thr=1e-3,
+    type='MultiImageMixDataset',
+    #oversample_thr=1e-3,
     dataset=dict(
         type=dataset_type,
         ann_file="/cluster/home/jorgro/train.txt",
