@@ -25,8 +25,10 @@ save_file = "/cluster/home/jorgro/submission.txt"
 #         f.write(string)
 #         print(string)
        # f.write(f"{}")
+results = []
+for img in test_dataset:
+    result = inference_detector(model, img)
+    results.append(result)
 
 with open('/cluster/home/jorgro/submission.pickle', 'wb') as handle:
-    for img in test_dataset:
-        result = inference_detector(model, img)
-        pickle.dump(result, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    pickle.dump(results, handle, protocol=pickle.HIGHEST_PROTOCOL)
