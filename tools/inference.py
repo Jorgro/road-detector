@@ -1,3 +1,4 @@
+import pickle
 from mmdet.apis import init_detector, inference_detector
 import mmcv
 import glob
@@ -13,14 +14,19 @@ model = init_detector(config_file, checkpoint_file, device='cuda:0')
 test_dataset = sorted(glob.glob("/cluster/home/jorgro/datasets/Norway/test/images/*.jpg"))
 save_file = "/cluster/home/jorgro/submission.txt"
 
-with open(save_file, 'w') as f:
+# with open(save_file, 'w') as f:
+#     for img in test_dataset:
+#         result = inference_detector(model, img)
+#         string = f"{img[49:]}"
+#         for i, obj in enumerate(result):
+#             if obj.shape[0]:
+#                 string += f" {i+1} {int(obj[0][0])} {int(obj[0][1])} {int(obj[0][2])} {int(obj[0][3])}"
+#         string += "\n"
+#         f.write(string)
+#         print(string)
+       # f.write(f"{}")
+
+with open('/cluster/home/jorgro/submission.pickle', 'wb') as handle:
     for img in test_dataset:
         result = inference_detector(model, img)
-        string = f"{img[49:]}"
-        for i, obj in enumerate(result):
-            if obj.shape[0]:
-                string += f" {i+1} {int(obj[0][0])} {int(obj[0][1])} {int(obj[0][2])} {int(obj[0][3])}"
-        string += "\n"
-        f.write(string)
-        print(string)
-       # f.write(f"{}")
+        pickle.dump(result, handle, protocol=pickle.HIGHEST_PROTOCOL)
