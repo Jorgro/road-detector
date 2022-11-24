@@ -2,26 +2,25 @@ _base_ = [
     './_base_/schedules/schedule_1x.py', './_base_/default_runtime.py'
 ]
 
-img_scale = (640, 640)  # height, width
+img_scale = (2048, 1024) # height, width
 
 model = dict(
     type='YOLOX',
     input_size=img_scale,
     random_size_range=(15, 25),
     random_size_interval=10,
-    backbone=dict(type='CSPDarknet', deepen_factor=0.33, widen_factor=0.5),
+    backbone=dict(type='CSPDarknet', deepen_factor=1.33, widen_factor=1.25),
     neck=dict(
         type='YOLOXPAFPN',
-        in_channels=[128, 256, 512],
-        out_channels=128,
-        num_csp_blocks=1),
+        in_channels=[320, 640, 1280],
+        out_channels=320,
+        num_csp_blocks=4),
     bbox_head=dict(
-        type='YOLOXHead', num_classes=4, in_channels=128, feat_channels=128),
+        type='YOLOXHead', num_classes=4, in_channels=320, feat_channels=320),
     train_cfg=dict(assigner=dict(type='SimOTAAssigner', center_radius=2.5)),
     # In order to align the source code, the threshold of the val phase is
     # 0.01, and the threshold of the test phase is 0.001.
-    test_cfg=dict(score_thr=0.01, nms=dict(type='nms', iou_threshold=0.65)))
-
+    test_cfg=dict(score_thr=0.01, nms=dict(type='nms', iou_threshold=0.5)))
 
 
 dataset_type = 'RDD2022Dataset'
@@ -39,7 +38,7 @@ train_pipeline = [
         ratio_range=(0.8, 1.6),
         pad_val=114.0),
     dict(type='YOLOXHSVRandomAug'),
-    dict(type='RandomFlip', flip_ratio=0.5),
+    #dict(type='RandomFlip', flip_ratio=0.5),
     # According to the official implementation, multi-scale
     # training is not considered here but in the
     # 'mmdet/models/detectors/yolox.py'.
@@ -56,7 +55,8 @@ train_pipeline = [
 ]
 
 train_dataset = dict(
-    type='MultiImageMixDataset',
+    type='ClassBalancedDataset',
+    oversample_thr=1e-3,
     dataset=dict(
         type=dataset_type,
         ann_file="/cluster/home/jorgro/train.txt",
@@ -77,25 +77,7 @@ test_pipeline = [
         flip=False,
         transforms=[
             dict(type='Resize', keep_ratio=True),
-            dict(type='RandomFlip'),
-            dict(
-                type='Pad',
-                pad_to_square=True,
-                pad_val=dict(img=(114.0, 114.0, 114.0))),
-            dict(type='DefaultFormatBundle'),
-            dict(type='Collect', keys=['img'])
-        ])
-]
-
-test_pipeline = [
-    dict(type='LoadImageFromFile'),
-    dict(
-        type='MultiScaleFlipAug',
-        img_scale=img_scale,
-        flip=False,
-        transforms=[
-            dict(type='Resize', keep_ratio=True),
-            dict(type='RandomFlip'),
+            #dict(type='RandomFlip'),
             dict(
                 type='Pad',
                 pad_to_square=True,
@@ -112,7 +94,7 @@ data = dict(
     train=train_dataset,
     val=dict(
         type=dataset_type,
-        ann_file="/cluster/home/jorgro/train.txt",
+        ann_file="/cluster/home/jorgro/val.txt",
         img_prefix=data_root + 'train/',
         pipeline=test_pipeline),
     test=dict(
@@ -174,7 +156,7 @@ evaluation = dict(
     # less than ‘max_epochs - num_last_epochs’.
     # The evaluation interval is 1 when running epoch is greater than
     # or equal to ‘max_epochs - num_last_epochs’.
-    interval=1,
+    interval=5,
     #interval=interval,
     #dynamic_intervals=[(max_epochs - num_last_epochs, 1)],
     metric='mAP')
